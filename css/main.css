@@ -9,7 +9,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+   body {
+	margin: 0;
+	position: relative;
+}
 html {
     color: #222;
     font-size: 1em;
@@ -97,11 +100,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-h1 {
+.happy_animate h1 {
     font-family: "Bevan";
-    font-size: 120px;
-    font-weight: 400;
-    line-height: 130px;
+    font-size: 80px;
+    font-weight: bold
+    line-height: 110px;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -118,13 +121,13 @@ h1 {
         -18px 18px 0 rgb(-93, 65, -38), -19px 19px 0 rgb(-97, 61, -42),
         -20px 20px 0 rgb(-101, 57, -46);
 }
-h1 span {
+.happy_animate h1 span {
     position: relative;
 }
-h1 span:first-child {
+.happy_animate h1 span:first-child {
     z-index: 15;
 }
-h1 span:nth-child(2) {
+.happy_animate h1 span:nth-child(2) {
     z-index: 14;
     text-shadow: 0px 0px 0 rgb(167, 42, 152), -1px 1px 0 rgb(162, 37, 147),
         -2px 2px 0 rgb(158, 33, 143), -3px 3px 0 rgb(154, 29, 139),
@@ -138,7 +141,7 @@ h1 span:nth-child(2) {
         -18px 18px 0 rgb(88, -37, 73), -19px 19px 0 rgb(84, -41, 69),
         -20px 20px 0 rgb(80, -45, 65);
 }
-h1 span:nth-child(3) {
+.happy_animate h1 span:nth-child(3) {
     z-index: 19;
     text-shadow: 0px 0px 0 rgb(42, 142, 167), -1px 1px 0 rgb(37, 137, 162),
         -2px 2px 0 rgb(33, 133, 158), -3px 3px 0 rgb(29, 129, 154),
@@ -152,7 +155,7 @@ h1 span:nth-child(3) {
         -18px 18px 0 rgb(-37, 63, 88), -19px 19px 0 rgb(-41, 59, 84),
         -20px 20px 0 rgb(-45, 55, 80);
 }
-h1 span:nth-child(4) {
+.happy_animate h1 span:nth-child(4) {
     z-index: 18;
     text-shadow: 0px 0px 0 rgb(221, -5, 59), -1px 1px 0 rgb(216, -10, 54),
         -2px 2px 0 rgb(212, -14, 50), -3px 3px 0 rgb(208, -18, 46),
@@ -166,20 +169,23 @@ h1 span:nth-child(4) {
         -18px 18px 0 rgb(142, -84, -20), -19px 19px 0 rgb(138, -88, -24),
         -20px 20px 0 rgb(134, -92, -28);
 }
-.o {
+.happy_animate .o {
     display: inline-block;
-    margin-left: 10px;
+   /* margin-left: 10px;
     margin-right: 2px;
     -ms-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
     -o-transform: rotate(15deg);
     -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
+    transform: rotate(15deg);*/
 }
-.e {
+.happy_animate .e {
     padding-left: 2px;
 }
-p {
+.happy_animate .v {
+	margin-left: 13px;
+}
+.happy_animate p {
     font-family: "Roboto Condensed";
     font-size: 23px;
     text-transform: uppercase;
@@ -187,12 +193,12 @@ p {
     margin-top: 10px;
     margin-left: -8px;
 }
-a,
-a:visited {
+.happy_animate a,
+.happy_animate a:visited {
     text-decoration: none;
     border-bottom: 1px solid red;
 }
-a:hover {
+.happy_animate a:hover {
     color: red;
 }
 

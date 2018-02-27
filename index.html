@@ -22,7 +22,11 @@
         <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="snow">
+    <div id="holi_app">
+
+    <div class="views">
+<!--   snow starts -->
+<div class="snow">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
 		    <g fill="#058F24" fill-opacity=".9" transform="translate(55 42)">
 			   <g id="snow-bottom-layer">
@@ -119,7 +123,7 @@
 		</svg>
     </div>
 
-    <div class="views">
+    <!--  snow ends  -->
         <div class="header">
             <div class="wishes">
                 <span id="show-name" style="color: darkblue;">myWishes</span>
@@ -127,20 +131,16 @@
             </div>
             <div class="happy_animate">
                 <h1>
-                    <span class="l">हो</span>
-                    <span class="o">ली</span>
+                    <span class="l">हो</span><span class="o">ली</span>
                     <span class="v">की</span>
-                    <span class="e">हा</span>
-                    <span class="l">र्दिक</span>
+                    <span class="e">हा</span><span class="l">र्दिक</span>
                 </h1>
             </div>
 
             <div class="happy_animate">
                 <h1>
                     <span class="l">शुभ</span>
-                    <span class="o">काम</span>
-                    <span class="v">ना</span>
-                    <span class="e">एँ</span>
+                    <span class="o">काम</span><span class="v">ना</span><span class="e">एँ</span>
                 </h1>
             </div>
         </div>
@@ -152,13 +152,13 @@
             <span class="arrow">
                 शेयर करें 👉
             </span>
-            <button class="button button-fill color-green" onclick="shareActionWA()">
+            <button class="button button-fill color-green" onclick="shareActionWA()"></button>
                 <img style="width: 25px; margin: 0 5px 0 0; " src="./img/whatsapp.svg"> WhatsApp</a>
-                <button class="button button-fill color-blue" onclick="shareActionFB()">
+                <button class="button button-fill color-blue" onclick="shareActionFB()"></button>
                     <img style="width: 25px; margin: 0 5px 0 0; " src="./img/facebook.svg">Facebook</a>
         </div>
         <div class="create-module" style="margin: 10px;">
-            <button class="button button-fill color-red show-form-btn">अपने नाम से भेजें</a>
+            <button class="button button-fill color-red show-form-btn">अपने नाम से भेजें</a></button>
         </div>
     </div>
     </div>
@@ -170,9 +170,11 @@
         </div>
         <form id="my-form" class="my-form-block">
             <input id="name-input" type="text" name="name" placeholder="अपना नाम लिखें">
-            <button class="button button-fill color-green" type="submit">ग्रीटिंग देखें</a>
+            <button class="button button-fill color-green" type="submit">ग्रीटिंग देखें</a></button>
         </form>
     </div>
+  </div>  <!--  holi_app id close  -->
+    
 
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
