@@ -117,13 +117,13 @@ textarea {
 
 .happy_animate h1 {
     font-family: "Bevan";
-    font-size: 80px;
+    font-size: 50px;
     font-weight: bold
     line-height: 110px;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
-    margin: 75px auto 0;
+    margin: 40px auto 0;
     text-shadow: 0px 0px 0 rgb(-14, 144, 41), -1px 1px 0 rgb(-19, 139, 36),
         -2px 2px 0 rgb(-23, 135, 32), -3px 3px 0 rgb(-27, 131, 28),
         -4px 4px 0 rgb(-32, 126, 23), -5px 5px 0 rgb(-36, 122, 19),
@@ -226,7 +226,7 @@ textarea {
 
 .header {
     font-size: 25px;
-    color: #9a2a03;
+    color: #f9f9f9;
     text-align: center;
     font-weight: bold;
     margin-top: 15px;
@@ -415,11 +415,18 @@ img.text-content {
 }
 
 #show-name {
-    font-size: 40px;
+    font-size: 30px;
     display: inline-block;
-    margin-bottom: 5px;
-    animation: swing 1s infinite, glow 20s infinite;
-}
+    margin-bottom: 12px;
+    animation: swing 1s infinite;
+	z-index: 18;
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+	font-family: "Bevan";
+	font-weight: bold line-height: 110px;
+	color: #fff;
+	text-transform:capitalize;
+    text-align: center;
+  }
 
 button {
     outline: none !important;
