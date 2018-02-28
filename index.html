@@ -4,10 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
+    <title>होली की शुभकामनाएँ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:site_name" content="myWishes">
+    <meta property="og:title" content="होली की शुभकामनाएँ">
+    <meta property="og:description" content="भेजिए होली की शुभकामनाएँ अपने सभी प्रयजनों को। ग्रीटिंग को अपने नाम के साथ भेजने का सबसे सरल तरीक़ा।">
+    <meta property="description" content="भेजिए होली की शुभकामनाएँ अपने सभी प्रयजनों को। ग्रीटिंग को अपने नाम के साथ भेजने का सबसे सरल तरीक़ा।">
+    <meta property="fb:app_id" content="155142638524736">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" http-equiv="Content-Type" content="text/html">
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -174,7 +180,7 @@
         </form>
     </div>
   </div>  <!--  holi_app id close  -->
-    
+
 
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -186,10 +192,30 @@
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
         window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+        ga('create', 'UA-114940281-1', 'auto'); ga('send', 'pageview')
     </script>
 	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
-	
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '155142638524736',
+            xfbml      : true,
+            version    : 'v2.10'
+          });
+
+          FB.AppEvents.logPageView();
+
+        };
+
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
 </body>
 
 </html>
