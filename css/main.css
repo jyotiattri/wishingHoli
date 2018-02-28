@@ -99,6 +99,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
    #holi_app {
     background-image: url(../img/maxresdefault.jpg);
     background-size: cover;
@@ -259,7 +260,7 @@ img.text-content {
     background: rgba(0, 0, 0, 0.6);
     z-index: 6;
     position: absolute;
-    bottom: 0;
+    bottom: 25%;
     left: 0;
     width: 100%;
     text-align: center;
@@ -380,9 +381,11 @@ img.text-content {
 }
 
 #form-modal.open {
-    visibility: visible;
-    transform: translateY(0%);
-    transition: transform 0.5s;
+	visibility: visible;
+	transform: translateY(0%);
+	transition: transform 0.5s;
+	position: absolute;
+	bottom: 10%;
 }
 
 #form-modal .top-bar {
