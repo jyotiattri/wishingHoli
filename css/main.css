@@ -99,6 +99,21 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   #holi_app {
+    background-image: url(../img/maxresdefault.jpg);
+    background-size: cover;
+	min-height: 100vh;
+	/* min-height: 30rem; */
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	&__content { position: relative;
+	align-self: center;
+	padding: 3rem 0;
+	}: ;
+}
 
 .happy_animate h1 {
     font-family: "Bevan";
