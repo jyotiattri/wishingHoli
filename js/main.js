@@ -1,41 +1,41 @@
 /*!
-* myMandir.js
+* main.js
 */
 
-// MyMandir Class
+// MyWishes Class
 (function(window) {
     "use strict";
 
     function instance() {
-      var MyMandir = {};
+      var MyWishes = {};
 
-      MyMandir.isAndroid = function() {
+      MyWishes.isAndroid = function() {
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1;
         return isAndroid;
       };
 
-      MyMandir.isMiniApp = function() {
-        return typeof mymandirApp !== "undefined";
+      MyWishes.isMiniApp = function() {
+        return typeof mywishesApp !== "undefined";
       };
 
-      MyMandir.isFBSDKAvailable = function() {
+      MyWishes.isFBSDKAvailable = function() {
         return typeof FB !== "undefined";
       };
 
-      MyMandir.shareWhatsapp = function(shareString) {
-        if (MyMandir.isMiniApp()) {
-          mymandirApp.shareOnWhatsApp(shareString);
+      MyWishes.shareWhatsapp = function(shareString) {
+        if (MyWishes.isMiniApp()) {
+          mywishesApp.shareOnWhatsApp(shareString);
         } else {
           var whatsappHref = "whatsapp://send?text=" + shareString;
           window.location.href = whatsappHref;
         }
       };
 
-      MyMandir.shareFacebook = function(shareString) {
-        if (MyMandir.isMiniApp()) {
-          mymandirApp.shareOnFacebook(shareString);
-        } else if (MyMandir.isFBSDKAvailable()) {
+      MyWishes.shareFacebook = function(shareString) {
+        if (MyWishes.isMiniApp()) {
+          mywishesApp.shareOnFacebook(shareString);
+        } else if (MyWishes.isFBSDKAvailable()) {
           // This works only in web browsers
           FB.ui(
             {
@@ -59,34 +59,34 @@
         }
       };
 
-      MyMandir.showToastMessage = function(message, longDuration) {
-        if (MyMandir.isMiniApp()) {
-          mymandirApp.makeToast(message, longDuration);
+      MyWishes.showToastMessage = function(message, longDuration) {
+        if (MyWishes.isMiniApp()) {
+          mywishesApp.makeToast(message, longDuration);
         } else {
           alert(message);
         }
       };
 
-      MyMandir.openExternal = function(url) {
-        if (MyMandir.isMiniApp()) {
-          mymandirApp.openExternalLink(url);
+      MyWishes.openExternal = function(url) {
+        if (MyWishes.isMiniApp()) {
+          mywishesApp.openExternalLink(url);
         } else {
           window.location.href = url;
         }
       };
 
-      MyMandir.openAppScheme = function(appURIScheme, appEventName) {
-        if (MyMandir.isMiniApp()) {
-          mymandirApp.openURISchemeWithEvent(appURIScheme, appEventName);
+      MyWishes.openAppScheme = function(appURIScheme, appEventName) {
+        if (MyWishes.isMiniApp()) {
+          mywishesApp.openURISchemeWithEvent(appURIScheme, appEventName);
         }
         return;
       };
 
-      return MyMandir;
+      return MyWishes;
     }
 
-    if (typeof MyMandir === "undefined") {
-      window.MyMandir = instance();
+    if (typeof MyWishes === "undefined") {
+      window.MyWishes = instance();
     }
   })(window);
 
@@ -111,16 +111,6 @@
   if (typeof jqs("name") === "undefined") {
     name = "";
   }
-
-  var showNotification = function() {
-  clevertap.notifications.push({
-    "titleText":'Would you like to receive Push Notifications?',
-    "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
-    "okButtonText":'Sign me up!',
-    "rejectButtonText":'No thanks',
-    "skipDialog":true,
-    "okButtonColor":'#f28046'});
-  };
 
   var toggleModuleInitial = function() {
     // $(".create-module").show();
@@ -161,20 +151,6 @@
 
   checkName();
 
-  if (typeof mymandirApp !== "undefined") {
-    var userid = mymandirApp.getUserId();
-    fetch("https://api.mymandir.com/user/get?user=" + userid)
-      .then(function(blob) {
-        return blob.json();
-      })
-      .then(function(resp) {
-        console.log("RESP", resp.name);
-        if (resp.status === "verified") {
-          name = '';
-        }
-      })
-      .then(checkName);
-  }
 
   var formModal = document.getElementById("form-modal");
 
@@ -218,16 +194,15 @@
   var shareActionWA = function() {
     var shareString = "";
     var whatsappHref;
-    shareString += "महाकाल भक्त *"+name+"* ने आपको *महाशिवरात्रि* की शुभकामनाएं भेजी हैं। %0A देखने के लिए अभी ब्लू लाइन को टच करें। %0A 👉";
+    shareString += name+"* ने आपको * होली* की शुभकामनाएं भेजी हैं। %0A देखने के लिए अभी ब्लू लाइन को टच करें। %0A 👉";
     shareString +=
       (window.location.href.split("?")[0] + "?name=" + name)
         .replace("#", "")
-        .replace(/ /g, "-") +
-      "%0A %0Amymandir ऐप्प डाउनलोड करें: https://goo.gl/QmFxeY";
-    if (typeof mymandirApp !== "undefined") {
+        .replace(/ /g, "-");
+    if (typeof mywishesApp !== "undefined") {
       console.log("shareString", shareString);
-      mymandirApp.shareOnWhatsApp(shareString.replace(/%0A/g, "\n"));
-    } else if (MyMandir.isAndroid()) {
+      mywishesApp.shareOnWhatsApp(shareString.replace(/%0A/g, "\n"));
+    } else if (MyWishes.isAndroid()) {
       console.log("shareString", shareString);
       whatsappHref = "whatsapp://send?text=" + shareString;
       console.log("whatsAppref", whatsappHref);
@@ -238,7 +213,6 @@
       console.log("whatsAppref", whatsappHref);
       window.location.href = whatsappHref;
     }
-    showNotification();
   };
 
   var shareActionFB = function() {
@@ -249,9 +223,9 @@
       name
     ).replace("#", "");
     console.log(shareString);
-    if (typeof mymandirApp !== "undefined") {
-      mymandirApp.shareOnFacebook(shareString);
-    } else if (MyMandir.isAndroid()) {
+    if (typeof mywishesApp !== "undefined") {
+      mywishesApp.shareOnFacebook(shareString);
+    } else if (MyWishes.isAndroid()) {
       FB.ui(
         {
           method: "share",
@@ -273,5 +247,4 @@
         }
       );
     }
-    showNotification();
   };
